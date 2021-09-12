@@ -47,7 +47,6 @@ def namm(update: Update, context: CallbackContext):
             chat_id, 'شما اجازه استفاده از ربات را ندارید')
 
 @run_async
-
 def time(update: Update, context: CallbackContext):
     chat_id = update.message.chat_id
     context.bot.sendMessage(
@@ -89,6 +88,7 @@ def mesage(update: Update, context: CallbackContext):
 
     update.message.reply_text(text='لینک کلاس مورد نظر خود را وارد کنید:\nتوجه: لینک به صورت کامل باشد(باhttps شروع شود)\nجهت برگشت به منوی اصلی /menu را ارسال کنید')
     return FOURTH
+  
 @run_async
 def skip_mesage(update: Update, context: CallbackContext):
     
@@ -100,6 +100,7 @@ def skip_mesage(update: Update, context: CallbackContext):
     update.message.reply_text(text='لینک کلاس مورد نظر خود را وارد کنید:\nتوجه: لینک به صورت کامل باشد(باhttps شروع شود)\nجهت برگشت به منوی اصلی /menu را ارسال کنید')
         
     return FOURTH
+  
 @run_async
 def urll(update: Update, context: CallbackContext):
     chat_id=update.message.chat_id
@@ -176,7 +177,7 @@ def close(update: Update, context: CallbackContext):
     return ConversationHandler.END
 
 def main() -> None:
-    updater = Updater(token, request_kwargs={'proxy_url': 'socks5h://127.0.0.1:9150'})
+    updater = Updater(token, request_kwargs={})
 
     
     conver_service = ConversationHandler(
@@ -196,5 +197,6 @@ def main() -> None:
 
     updater.start_polling()
     updater.idle()
+    
 if __name__ == '__main__':
     main()
