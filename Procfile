@@ -1,1 +1,1 @@
-web: python ./minebot.py
+web: python minebot.py
